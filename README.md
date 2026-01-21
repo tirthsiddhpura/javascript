@@ -82,159 +82,206 @@ on console.log
 <h3>Example 5 :</h3>
 <p>"12" - 1</p>
 <p><b>Answer:</b> 11</p>
+
+Javascript Operator
+<div>
+<h1>Example 1 :</h1>
+<p>let x = 10;</p>
+<p>let y = 20;</p>
+<p>if(x>5 && y > 5){
+
+    console.log("Both are greater than 5");
+
+}else{
+
+    console.log("One or both are not greater than 5");
+
+}</p>
+<p>True</p>
+<p>Why:Both conditions are true</p>
+</div>
  
+<div>
 
-<title>JavaScript Operators – All Examples</title>
-</head>
-<body>
+<h1>Example 2 :</h1>
+<p>let isAdmin = true;</p>
+<p>let isLoggedIn = false;</p>
+<p>if(isAdmin || isLoggedIn){
 
-<h1>JavaScript Operators – All Examples</h1>
+    console.log("Acess granted");
 
-<script>
+}else{
 
-Example 1 – AND (&&)
-let x = 10;
-let y = 20;
+    console.log("Acess Denied");
 
-if (x > 5 && y > 5) {
-  console.log("Example 1: Both are greater than 5");
-}
-<p> WHY: Both conditions are true</p>
+}</p>
+<p>Access granted</p>
+<p>Why:At least one condition is true</p>
+</div>
+ 
+<div>
+<h1>Example 3 :</h1>
+<p>let temp = 35;</p>
+<p>if(!(temp > 30)){
 
+    console.log("Hot day");
 
-Example 2 – OR (||)
+}else{
 
-let isAdmin = true;
-let isLoggedIn = false;
+    console.log("Pleasant day");
 
-if (isAdmin || isLoggedIn) {
-  console.log("Example 2: Access granted");
-}
-<p>WHY: At least one condition is true</p>
+}</p>
+<p> Hot day</p>
 
-Example 3 – NOT (!)   
-let temp = 35;
+</div><p>Why:temp > 30 is true, !true becomes false</p>
+ 
+<div>
+<h1>Example 4 :</h1>
+<p>let a = 0;</p>
+<p>if(a){
 
-if (!(temp > 30)) {
-  console.log("Example 3: Hot day");
-} else {
-  console.log("Example 3: Pleasant day");
-}
- <p>WHY: temp > 30 is true → !true = false → else runs</p>
+    console.log("Truthy value");
 
+}else{
 
- Example 4 – Truthy / Falsy
-let a = 0;
+    console.log("Falsy value");
 
-if (a) {
-  console.log("Example 4: Truthy value");
-} else {
-  console.log("Example 4: Falsy value");
-}
-<p>WHY: 0 is a falsy value in JavaScript</p>
-
-
-Example 5 – Ternary Operator
-let score = 78;
-
-let grade =
-  score >= 90 ? "A" :
-  score >= 80 ? "B" :
-  score >= 70 ? "C" : "D";
-
-console.log("Example 5: Grade =", grade);
-<p>WHY: 78 >= 70 → Grade C</p>
+}</p>
+<p>Truthy value</p>
+<p>Why:0 is a falsy value > </p>
+</div>
+ 
+<div>
+<h1>Example 5 :</h1>
+<p>let score = 78;</p>
+<p>let grade = score >= 90 ? "A" : score >= 80 ? "B" : score >= 70 ? "C" : "D";</p>
+<p>console.log("Grade:", grade);</p>
+<p>Grade:C</p>
+<p>Why: 78 >= 70 → true
+So grade = "C"</p>
 
 
+</div>
+ 
+<div>
+<h1>Example 6 :</h1>
+<p>let points = 120;</p>
+<p>let status = points >= 100 ? "Gold" : points >= 50 ? "Silver" : "Bronze";</p>
+<p>console.log("Status:", status);</p>
+<p>Status:Gold</p>
+<p>Why: 120 >= 100 → Gold</p>
+</div>
+ 
+<div>
+<h1>Example 7:</h1>
+<p>let loggedIn = true;</p>
+<p>let hasToken = false;</p>
+<p>let access = loggedIn && hasToken ? "Allow" : "Deny";</p>
+<p>console.log("access:", access);</p>
+<p>Access: Deny</p>
+<p>Why:true && false = false</p>
+</div>
+ 
+<div>
+<h1>Example 8:</h1>
+<p>let a = 5;</p>
+<p>a++</p>
+<p>console.log(a);</p>
+<p>6</p>
+<p>why: Value increases after execution</p>
 
- Example 6 – Nested Ternary
-  
-let points = 120;
+</div>
+ 
+<div>
+<h1>Example 9:</h1>
+<p>let a = 8;</p>
+<p>++a</p>
+<p>console.log(a);</p>
+<p>9</p>
+<p>why: Value increases before execution</p>
 
-let status =
-  points >= 100 ? "Gold" :
-  points >= 50 ? "Silver" : "Bronze";
+</div>
+ 
+<div>
+<h1>Example 10:</h1>
+<p>let b = 4;</p>
+<p>let c = b++</p>
+<p>console.log(b, c);</p>
+<p>5 4</p>
+<p>Why:c = 4 (old value)
+b = 5 (incremented after)</p>
+<p>why: c gets old value → 4
+b becomes 5</p>
 
-console.log("Example 6: Status =", status);
-<p> WHY: 120 >= 100 → Gold</p>
-
-
-Example 7 – AND with Ternary
-let loggedIn = true;
-let hasToken = false;
-
-let access = loggedIn && hasToken ? "Allow" : "Deny";
-console.log("Example 7: Access =", access);
-<p> WHY: AND requires both true → false</p>
-
-
-Example 8 – Post Increment
-let a1 = 5;
-a1++;
-console.log("Example 8:", a1);
- <p>WHY: Value increases after execution</p>
-
-
-Example 9 – Pre Increment
-let a2 = 8;
-++a2;
-console.log("Example 9:", a2);
-<p> WHY: Value increases before execution</p>
-
-
-
-Example 10 – Post Increment Assignment
-let b1 = 4;
-let c1 = b1++;
-console.log("Example 10:", b1, c1);
-<p> WHY: c1 gets old value (4), b1 becomes 5</p>
-
-
-Example 11 – Pre Increment Assignment
-et b2 = 4;
-let c2 = ++b2;
-console.log("Example 11:", b2, c2);
-<p> WHY: b2 increments first → both are 5</p>
-
-
-Example 12 – Post Decrement
-let m = 10;
-console.log("Example 12:", m--);
-console.log("After decrement:", m);
-<p> WHY: First prints 10, then decreases to 9</p>
-
-
-Example 13 – Mixed Increment
-let n = 5;
-let result = n++ + ++n;
-console.log("Example 13:", result);
-<p> WHY: 5 + 7 = 12</p>
-
-
-Example 14 – Corrected Function Increment
-let likes = 100;
-
-function likePost() {
-  return ++likes;
-}
-
-console.log("Example 14:", likePost());
-console.log("Total likes:", likes);
-<p>WHY: Pre-increment increases before return</p>
+</div>
+ 
+<div>
+<h1>Example 11:</h1>
+<p>let b = 4;</p>
+<p>let c = ++b</p>
+<p>console.log(b, c);</p>
+<p>5 5</p>
+<p>why: b increases first
+both become 5</p>
 
 
+</div>
+ 
+<div>
+<h1>Example 12:</h1>
+<p>let m = 10;</p>
+<p>console.log(m--)</p>
+<p>console.log(m);</p>
+<p>10  9</p>
+<p>why: Prints old value
+Then decrements</p>
 
-Example 15 – Post Decrement Comparison
-let count = 5;
+</div>
+ 
+<div>
+<h1>Example 13:</h1>
+<p>let n = 5;</p>
+<p>let result = n++ + ++n;</p>
+<p>console.log(result);</p>
+<p>12</p>
+<p>Why:n++ → 5 (then n = 6)
+++n → 7
+5 + 7 = 12</p>
+<p>why: n++ → 5 → n becomes 6
+++n → 7
+5 + 7 = 12</p>
 
-if (count-- === 5) {
-  console.log("Example 15: Matched");
-} else {
-  console.log("Example 15: Not Matched");
-}
-<p> WHY: count-- returns 5 first, then decreases</p>
+</div>
+ 
+<div>
+<h1>Example 14:</h1>
+<p>let likes = 100;</p>
+<p>function likePost(){
 
-</script>
+result ++likes;
 
-</body>
-</html>
+}</p>
+<p>console.log(likePost());</p>
+<p>console.log(likes);</p>
+<p>101</p>
+<p>why: ++likes or likes++ is valid
+result ++likes is invalid syntax</p>
+
+
+</div>
+ 
+<div>
+<h1>Example 15:</h1>
+<p>let count = 5;</p>
+<p>if(count-- === 5){   
+
+console.log("Matched");
+
+}else{
+
+    console.log("Not Matched"); 
+
+}</p>
+<p>Matched</p>
+<p>Why:Comparison happens before decrement</p>
+</div>
