@@ -97,3 +97,11 @@
 //typeof --> primitive data type mate use karvo
 //instanceof -->reference data type mate use karvo
 
+// example
+let x = 10;
+let y = 20;
+if(x>5 && y > 5){
+    console.log("Both are greater than 5");
+}else{
+    console.log("One or both are not greater than 5");
+}
