@@ -276,7 +276,6 @@ result ++likes is invalid syntax</p>
 <p>if(count-- === 5){   
 
 console.log("Matched");
-
 }else{
 
     console.log("Not Matched"); 
@@ -285,3 +284,5 @@ console.log("Matched");
 <p>Matched</p>
 <p>Why:Comparison happens before decrement</p>
 </div>
+
+
