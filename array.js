@@ -301,87 +301,487 @@ let temp_data =data.map((val)=>{
     }
 });
 
-// 1. Double daily steps count
-// Real life: Fitness app doubling step goal
-// const steps = [1000, 2000, 3000];
-// function doubleSteps(step) {
-//   return step * 2;
-// }
-// const newSteps = steps.map(doubleSteps);
+// ex 1:
+const steps1 = [1000, 2000, 4000];
+steps1.map((e, i) => {
+    steps1[i] *= 2;
+})
+console.log(steps)
+
+//ex 2
+const minutes = [1, 5, 10];
+minutes.map((e, i) => {
+    minutes[i] *= 60;
+})
+console.log(minutes)
+
+//ex 3
+const pricest = [200, 350, 500];
+pricest.map((e, i) => {
+    pricest[i] += 50;
+})
+console.log(pricest)
+
+// ex 4
+const marks = [35, 72, 88, 40];
+marks.map((e, i) => {
+    marks[i] = e >= 40 ? `${e} : pass` : `${e} : fail`;
+})
+console.log(marks)
+
+// ex 5
+const name3 = ['rahul', 'neha', 'amit'];
+name3.map((e, i) => {
+    name3[i] = e.toUpperCase();
+})
+console.log(name3)
+
+// ex 6
+const prices1 = [500, 1000, 1500];
+prices1.map((e, i) => {
+    prices1[i] = e - (e * 0.10)
+})
+console.log(prices1)
+
+// ex 7
+const score = [45, 60, 85];
+score.map((e, i) => {
+    if (e >= 80) { score[i] += 20; }
+    else if (e >= 50) { score[i] += 10; }
+})
+console.log(score)
+
+// ex 8
+const celsius = [0, 20, 30];
+let fehrenheit = celsius.map(e => ((e * 9 / 5) + 32))
+console.log(fehrenheit)
+
+// ex 9
+const numbers = [1, 2, 3, 4];
+let table = numbers.map((e, i) => (`${e} * ${i} = ${e * i}`))
+console.log(table)
+
+///filter 
+//filter tyare use karvu ke jyare ek new array create karvo chhe
+//with condition
+// in return true/false
+//if true ---> add into new array
+// if else(false)----> not add into new array
+let laptop_price=[15000,20000,30000,40000,45000];
+let expensive_laptop=laptop_price.filter((price)=>{
+    if (price > 30000) return true;
+
+});
+//je value 30000 thi vadhare chhhe te new add thase and biji value ne array ma add nahi kare 
+ // use case -- DATA ma this specific data new array ma store karvo hoy based on condition
+ let product_type = ["mobile","tablet","laptop","mouse"];
+
+ let filter_product_type = product_type.filter((type)=>{
+    if(type==="tablet"|| type === "mobile") return true;
+ });
+
+ //reduce 
+ // reduce tyre j use karvu ke jare ek single value calulate karvi hoy from array
+ let total_price =[10,68,45,50,52,40];
+
+ let Final_price = total_price.reduce((accumulator,val)=>{
+    return accumulator +val;
+ },0);// initial value of accumulator
+ // 0+10 =>10
+ // 10 + 68 => 78
+ // 78 + 45 => 123
+ console.log("Final price:",Final_price );
+ //accumulator --> je value function ma return thashe te accumulator ma store thashe --> accumulator name change kari sko cho
+ //val --> array ni dareak value
+
+ //use case --> data ma thi single value calcualte karvi hoy
+ //ex.product am thi total price calculate karvi hoy
+
+ //find
+ //find tyre j use karvu ke jyre array mathi ek value find karvi hoy based on condition 
+ //find () return kare chhe array no element --> callback not return value nathi
+ //never returns what you return you return inside it
+ //returns the array element itself -- not return array
+ //.find() stops at the first match
+ // it does not continue looping
+
+ let product=["laptop","mobile","Tablet","Dekstop","Smart Watch"];
+ let find_product = product.find ((item)=>{
+    if (item === "dekstop"){
+        return true;
+    }else if(item === "tablet"){
+        return true;
+    }else{
+        return false;
+    }
+ });
+ 
+ //use case -- data ma thi ek value find karvi hoy  based on condition
+ //ex. product ma thi specific product find karvo hoy based on name 
+
+ //find vs filter 
+ // real -life scenario : sopping mail Security
+ // your are a security at a shopping mail
+ //check the list of visitors 
+ let people = ["john","sara","mike","Anna","David","sara"];
+ // find --> you are looking for the first person named "sara"in the list and stop serching paheli var j male,e j and angel check j na kare)
+ let person =people.find((name)=>name === "sara");
+ console.log("find",person);
+
+ // example 2: Book bus for travel 
+
+ //check kare chhe array ma koi pan ek item codition satisfy kare chhe ke nahi
+ // condition true aave tyre stop kare
+ //some ()vs find ()return value of array
+ //give ans in true and false 
+ let marks1=[10,20,35,90];
+ let any = marks1.some((val)=>{
+    if (val>85)return 12;
+    //if (val<85)return "need improvement";
+ });
+ console.log(any)
+ //use case --check if some prouduct are out of stock in your cart
+ 
+ 
+ //every 
+ //check kare chhe ke array ma badha j items condition satisfy kare chhe ke nahi
+ //true -->baha items condition match kare
+ //false --ek pan fail thay to
+ let def=[20,30,5,35];
+ let num =def.every(function(val){
+    return val<40;
+ });
+
+ //use case -->check all student is pass or not 
+
+ //some(),find(),filter(),every()
+ //let products =["tablet","mobile","laptop","mobile"]
+ //method --> condition -->output
+ //.some ()--> item === "mobile"--> true
+ //.find()--> item === "mobile"-->mobile
+//.filter()--> item === "mobile"-->["mobile","mobile"]
+//.every()--> item === "mobile"-->false
+
+//destructuring operate -- give vaule to variable (ex.we don't use every time arr1[1],just save it into variable let [,k]=arr1)
+let arr50 =[1,2,3,4,5]
+//let j = arr50[0];-->1
+//let k = arr50[2];-->3
+let [ j, ,k]=arr50;//-->destructuring
+//let [, ,n]=arr;
+console.log(k);
+let user_data =["test","test@gmail.com","male","surat"]
+// name ,email,gender,city 
+// console.log ("name",name)
+
+//spread opreator -- copy value from main array
+let arr8 =[1,2,3,4,5,6,7];
+// let arr50 =arr3;//just give reference not copy valuation you change into arr50 that will be change arr3 too)
+let arr9 =[...arr8];
+//...-->rest -->into function 
+//...-->spread --> into Array and object ---copy
+let temp_arr =[1,2,3];
+let temp_arr2 =[4,5,6];
+let mix_arr =[...temp_arr,...temp_arr2];
 
 
-// 2. Convert minutes to seconds
-// Real life: Video duration calculation
-// const minutes = [1, 5, 10];
-// const seconds = minutes.map(function(min) {
-//   return min * 60;
-// });
+/************************************************
+MAP + FILTER + REDUCE PRACTICE (Q1–Q20)
+************************************************/
+
+/* =========================
+Q1. Grocery Store – Total Cost
+========================= */
+const prices10 = [50, 120, 300, 80, 200];
+
+const totalCost = prices1
+  .filter(price => price > 100)
+  .map(price => price * 1.05)
+  .reduce((sum, price) => sum + price, 0);
+
+console.log(totalCost);
+// Answer: 651
+// Why: Items >100 taxed 5% then summed
 
 
-// 3. Add ₹50 delivery charge to prices
-// Real life: Food delivery app
-// const prices = [200, 350, 500];
-// const finalPrices = prices.map(price => price + 50);
+/* =========================
+Q2. Fitness App – Weekly Calories
+========================= */
+const minutes1 = [10, 25, 40, 15, 60];
+
+const totalCalories11 = minutes1
+  .filter(min => min >= 20)
+  .map(min => min * 4)
+  .reduce((sum, cal) => sum + cal, 0);
+
+console.log(totalCalories);
+// Answer: 500
+// Why: Valid workout days converted to calories
 
 
-// 4. Convert exam marks to grades
-// Real life: Result system
-// const marks = [35, 72, 88, 40];
-// function getGrade(mark) {
-//   return mark >= 40 ? 'Pass' : 'Fail';
-// }
-// const grades = marks.map(getGrade);
+/* =========================
+Q3. Exam Results – Total Passed Marks
+========================= */
+const marks10 = [35, 55, 80, 20, 45];
+
+const totalPassedMarks = marks1
+  .filter(mark => mark >= 40)
+  .reduce((sum, mark) => sum + mark, 0);
+
+console.log(totalPassedMarks);
+// Answer: 180
+// Why: Only passing marks added
 
 
-// 5. Capitalize names
-// Real life: Display usernames properly
-// const names = ['rahul', 'neha', 'amit'];
-// const formattedNames = names.map(name =>
-//   name[0].toUpperCase() + name.slice(1)
-// );
+/* =========================
+Q4. Bank App – Total Credits
+========================= */
+const transactions10 = [500, -200, 1000, -300, 700];
+
+const totalCredits = transactions1
+  .filter(amount => amount > 0)
+  .reduce((sum, amount) => sum + amount, 0);
+
+console.log(totalCredits);
+// Answer: 2200
+// Why: Only positive transactions counted
 
 
-// 6. Apply 10% discount
-// Real life: Shopping sale
-// const prices = [500, 1000, 1500];
-// function applyDiscount(price) {
-//   return price - price * 0.10;
-// }
-// const discounted = prices.map(applyDiscount);
+/* =========================
+Q5. Online Sale – Discounted Bill
+========================= */
+const prices20 = [800, 1500, 3000, 600, 1200];
+
+const discountedBill = prices2
+  .filter(price => price > 1000)
+  .map(price => price * 0.85)
+  .reduce((sum, price) => sum + price, 0);
+
+console.log(discountedBill);
+// Answer: 4845
+// Why: Items above 1000 discounted 15%
 
 
-// 7. Add bonus points to scores based on condition
-// Real life: Game scoring system
-// const scores = [45, 60, 85];
-// const finalScores = scores.map(score => {
-//   if (score >= 80) return score + 20;
-//   if (score >= 50) return score + 10;
-//   return score;
-// });
+/* =========================
+Q6. Attendance – Reward Points
+========================= */
+const hours1 = [5, 7, 8, 6, 9];
+
+const rewardPoints = hours1
+  .filter(hour => hour >= 7)
+  .map(hour => hour * 10)
+  .reduce((sum, point) => sum + point, 0);
+
+console.log(rewardPoints);
+// Answer: 240
+// Why: Only valid hours earn points
 
 
-// 8. Convert temperatures with formula
-// Real life: Weather app
-// const celsius = [0, 20, 30];
-// function toFahrenheit(temp) {
-//   return (temp * 9/5) + 32;
-// }
-// const fahrenheit = celsius.map(toFahrenheit);
+/* =========================
+Q7. Delivery App – Total Distance
+========================= */
+const distances = [3, 6, 10, 4, 8];
+
+const totalDistance = distances
+  .filter(d => d > 5)
+  .map(d => d + 1)
+  .reduce((sum, d) => sum + d, 0);
+
+console.log(totalDistance);
+// Answer: 27
+// Why: Long trips get 1km bonus
 
 
-// 9. Generate table of numbers
-// Real life: Math learning app
-// const numbers = [1, 2, 3, 4];
-// const tableOfTwo = numbers.map(num => num * 2);
+/* =========================
+Q8. Salary System – Final Salary
+========================= */
+const salaries = [18000, 25000, 30000, 15000];
+
+const totalSalary = salaries
+  .filter(sal => sal > 20000)
+  .map(sal => sal + 2000)
+  .reduce((sum, sal) => sum + sal, 0);
+
+console.log(totalSalary);
+// Answer: 59000
+// Why: Eligible salaries get bonus
 
 
-// 10. Combine map with string formatting
-// Real life: SMS notification system
-// const balances = [500, 1200, 300];
-// const messages = balances.map(balance =>
-//   `Your balance is ₹${balance}`
-// );
+/* =========================
+Q9. Study App – Total Study Time
+========================= */
+const hours2 = [0.5, 1.5, 2, 0.75, 3];
 
-//use case --data ma thi specific data new array ma store karv hoy
-//ex. product ma thi specific catagory na product new array ma store karva hoy
-//if you want to show 
+const totalStudyMinutes = hours2
+  .filter(hour => hour > 1)
+  .map(hour => hour * 60)
+  .reduce((sum, min) => sum + min, 0);
+
+console.log(totalStudyMinutes);
+// Answer: 390
+// Why: Sessions >1hr converted to minutes
+
+
+/* =========================
+Q10. Electricity Usage – Monthly Bill
+========================= */
+const units = [80, 120, 200, 90, 150];
+
+const electricityBill = units
+  .filter(unit => unit > 100)
+  .map(unit => unit * 6)
+  .reduce((sum, cost) => sum + cost, 0);
+
+console.log(electricityBill);
+// Answer: 2820
+// Why: Usage >100 charged per unit
+
+
+/* =========================
+Q11. Game Scores – Final Power Score
+========================= */
+const scores11 = [30, 50, 90, 20, 70];
+
+const powerScore = scores1
+  .filter(score => score > 40)
+  .map(score => score * 2)
+  .reduce((sum, score) => sum + score, 0);
+
+console.log(powerScore);
+// Answer: 420
+// Why: Qualified scores doubled
+
+
+/* =========================
+Q12. Travel App – Total Fare
+========================= */
+const rides = [5, 12, 20, 8, 15];
+
+const totalFare = rides
+  .filter(km => km > 10)
+  .map(km => km + 50)
+  .reduce((sum, fare) => sum + fare, 0);
+
+console.log(totalFare);
+// Answer: 147
+// Why: Long rides get service fee
+
+
+/* =========================
+Q13. Office Work – Productive Hours
+========================= */
+const hours3 = [4, 6, 8, 5, 9];
+
+const productiveMinutes = hours3
+  .filter(hour => hour >= 6)
+  .map(hour => hour * 60)
+  .reduce((sum, min) => sum + min, 0);
+
+console.log(productiveMinutes);
+// Answer: 1380
+// Why: Productive hours converted to minutes
+
+
+/* =========================
+Q14. Shopping Cart – Reward Coins
+========================= */
+const purchases = [300, 800, 1200, 400];
+
+const rewardCoins = purchases
+  .filter(amount => amount > 500)
+  .map(() => 10)
+  .reduce((sum, coin) => sum + coin, 0);
+
+console.log(rewardCoins);
+// Answer: 20
+// Why: Each qualifying purchase gives 10 coins
+
+
+/* =========================
+Q15. Fuel App – Total Fuel Cost
+========================= */
+const liters = [3, 6, 10, 4, 8];
+
+const fuelCost = liters
+  .filter(l => l > 5)
+  .map(l => l * 105)
+  .reduce((sum, cost) => sum + cost, 0);
+
+console.log(fuelCost);
+// Answer: 2520
+// Why: Fuel above 5L charged per liter
+
+
+/* =========================
+Q16. Interview Classic – Sum of Cubes
+========================= */
+const numbers10 = [1, 2, 3, 4, 5];
+
+const sumOfCubes = numbers1
+  .filter(num => num % 2 !== 0)
+  .map(num => num ** 3)
+  .reduce((sum, num) => sum + num, 0);
+
+console.log(sumOfCubes);
+// Answer: 153
+// Why: Odd numbers cubed and added
+
+
+/* =========================
+Q17. Performance Tracking – Bonus Points
+========================= */
+const scores20 = [10, 20, 30, 40, 50];
+const avg = scores2.reduce((a, b) => a + b, 0) / scores2.length;
+
+const bonusScore = scores2
+  .filter(score => score > avg)
+  .map(score => score + 5)
+  .reduce((sum, score) => sum + score, 0);
+
+console.log(bonusScore);
+// Answer: 100
+// Why: Above-average scores get bonus
+
+
+/* =========================
+Q18. Subscription App – Final Bill
+========================= */
+const plans = [199, 399, 599, 299];
+
+const finalBill = plans
+  .filter(plan => plan > 300)
+  .map(plan => plan * 1.18)
+  .reduce((sum, plan) => sum + plan, 0);
+
+console.log(finalBill);
+// Answer: 1177.82
+// Why: Premium plans taxed 18%
+
+
+/* =========================
+Q19. Learning App – Achievement Score
+========================= */
+const scores3 = [45, 60, 70, 30, 80];
+
+const achievementScore = scores3
+  .filter(score => score >= 60)
+  .map(score => score * score)
+  .reduce((sum, score) => sum + score, 0);
+
+console.log(achievementScore);
+// Answer: 14900
+// Why: Qualified scores squared and summed
+
+
+/* =========================
+Q20. Interview Finisher – Final Sum
+========================= */
+const numbers2 = [3, 6, 9, 10, 12];
+
+const finalSum = numbers2
+  .filter(num => num % 3 === 0)
+  .map(num => num * 10)
+  .reduce((sum, num) => sum + num, 0);
+
+console.log(finalSum);
+// Answer: 300
+// Why: Numbers divisible by 3 multiplied and added
