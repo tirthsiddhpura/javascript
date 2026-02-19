@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Time out And Set Intervel</title>
+    <style>
+        #main{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card{
+            width: 500px;
+            height: auto;
+            border: 1px solid navy;
+            padding: 10px;
+            border-radius: 1rem;
+            background-color:lightblue;
+            color: navy;
+            text-align: center;
+            display: none;
+        }
+        .outer{
+            width: 30%;
+            padding: 20px;
+            border-radius: 16px;
+            background-color: #222;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .progress-card{
+            margin: 10px 0;
+            height: 5px;
+            width: 100%;
+            background-color: #555;
+            border-radius: 7px;
+            overflow: hidden;
+        }
+        .progress-bar{
+            height: 100%;
+            width: 0%;
+            background: white;
+            transition: width 0.3s ease;
+        }
+        .percent{
+            font-style: 16px;
+            font-weight: 500;
+            color: #d1d1d1;
+            letter-spacing: 0.5px;
+        }
+        h2{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="card">
+        <h1>Welcome to surat</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit harum sequi necessitatibus? Consequuntur illum omnis inventore dolorum atque amet molestias ullam debitis sapiente aliquid impedit et maiores excepturi, incidunt nisi.</p>
+        <button>close</button>
+        </div>
+    </div>
+
+    <div id="download">
+        <div class="outer">
+            <h2>Downloading ...</h2>
+            <div class="progress-card">
+                <div class="progress-bar"></div>
+            </div>
+            <p class="percent">0%</p>
+        </div>
+    </div>
+    
+    <script src="./timmer.js"></script>
+</body>
+</html>

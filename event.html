@@ -6,7 +6,7 @@
     <title>Document</title>
     <style>
       .cs-body {
-        background-color:lavenderblush;
+        background-color:lightgrey;
         color: black
       }
       .box {
@@ -38,7 +38,35 @@
         width: 200px;
         border-radius: 10px;
       }
-
+      .box2{
+        width: 200px;
+        height: 200px;
+        background-color: darkgreen;
+      }
+      .outer{
+        height: 300px;
+        width: 300px;
+        background-color: lightyellow;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .inner{
+        height: 200px;
+        width: 200px;
+        background-color:darkturquoise;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .most_inner{
+        height: 100px;
+        width: 100px;
+        background-color: blueviolet;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     </style>
   </head>
 
@@ -70,5 +98,32 @@
     <input type="text" value="text">
     <input type="submit"value ="submit">
 </form>
+
+  <div class="box2"></div>
+<br><br>
+  <div class="outer">
+    <div class="inner">
+      <div class="most_inner">
+        <button>Click</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- to Do -->
+   <h1>Shopping list</h1>
+   <ul>
+    <li>laptop i7 13th gen</li>
+    <li>harddisk 1TB SSD</li>
+    <li>Power cable</li>
+    <li>Rgb Keyboard</li>
+    <li>Track Pad</li>
+   </ul>
+
+   <!-- text counter -->
+   <input type="text" id="counter">
+   <h1>Text Counter : <b class="count"> 0</b></h1>
+
+   
+ 
   <script src="event.js"></script>
 </html>
